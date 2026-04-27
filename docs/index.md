@@ -7,6 +7,7 @@ Use this index to navigate the blueprint by lifecycle phase.
 - [Repository Review](review/repo-review.md)
 - [GitHub Publishing Checklist](review/github-publishing-checklist.md)
 - [Initial Implementation Guide](implementation/initial-implementation-guide.md)
+- [Cybelynxcore Production-Like Example](../examples/cybelynxcore-production/README.md)
 - [Repository Separation Model](architecture/repo-separation-model.md)
 - [Recommended Repositories](architecture/recommended-repos.md)
 

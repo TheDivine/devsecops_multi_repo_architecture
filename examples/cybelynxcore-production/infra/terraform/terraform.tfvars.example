@@ -1,0 +1,4 @@
+organization = "cybelynxcore"
+environment  = "production"
+cluster_name = "cybelynxcore-production"
+domain       = "cybelynxcore.test"

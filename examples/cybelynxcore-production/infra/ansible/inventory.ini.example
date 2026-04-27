@@ -1,0 +1,8 @@
+[production]
+node-1.cybelynxcore.test ansible_host=node-1.cybelynxcore.test
+node-2.cybelynxcore.test ansible_host=node-2.cybelynxcore.test
+node-3.cybelynxcore.test ansible_host=node-3.cybelynxcore.test
+
+[production:vars]
+ansible_user=automation
+ansible_become=true

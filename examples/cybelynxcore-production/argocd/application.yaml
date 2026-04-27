@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cybelynxcore-api-production
+  namespace: argocd
+spec:
+  project: cybelynxcore
+  source:
+    repoURL: https://github.com/TheDivine/devsecops_multi_repo_architecture.git
+    targetRevision: main
+    path: examples/cybelynxcore-production/kubernetes
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cybelynxcore-production
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=false

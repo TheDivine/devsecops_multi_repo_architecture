@@ -1,0 +1,14 @@
+route:
+  receiver: cybelynxcore-default
+  group_by:
+    - alertname
+    - severity
+    - service
+  routes:
+    - matchers:
+        - severity="critical"
+      receiver: cybelynxcore-critical
+
+receivers:
+  - name: cybelynxcore-default
+  - name: cybelynxcore-critical

@@ -1,0 +1,22 @@
+groups:
+  - name: cybelynxcore-api-production
+    rules:
+      - alert: CybelynxcoreApiUnavailable
+        expr: up{namespace="cybelynxcore-production",job="cybelynxcore-api"} == 0
+        for: 5m
+        labels:
+          severity: critical
+          service: cybelynxcore-api
+        annotations:
+          summary: "Cybelynxcore API scrape target is unavailable"
+          description: "The production-like API target has been unavailable for more than 5 minutes."
+
+      - alert: CybelynxcoreApiHighRestartRate
+        expr: increase(kube_pod_container_status_restarts_total{namespace="cybelynxcore-production",container="app"}[15m]) > 2
+        for: 10m
+        labels:
+          severity: warning
+          service: cybelynxcore-api
+        annotations:
+          summary: "Cybelynxcore API restart rate is elevated"
+          description: "Investigate application health, resource limits, and recent rollout events."

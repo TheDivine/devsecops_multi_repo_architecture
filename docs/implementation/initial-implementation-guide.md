@@ -46,3 +46,5 @@ make grep-secrets
 ```
 
 Implementation repositories should add tool-specific validation such as Helm rendering, Kustomize build, Ansible syntax checks, Terraform/OpenTofu validation, and policy checks.
+
+For a concrete dummy profile with placeholders resolved to a safe organization and reserved domain, see [Cybelynxcore Production-Like Example](cybelynxcore-production-example.md).

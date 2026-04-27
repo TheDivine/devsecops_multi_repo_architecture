@@ -1,0 +1,5 @@
+bucket = "cybelynxcore-production-tfstate"
+key    = "platform/terraform.tfstate"
+region = "test-region-1"
+
+# Replace with a real private backend only in implementation repositories.

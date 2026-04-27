@@ -99,6 +99,8 @@ This repository includes safe starter implementations that demonstrate the expec
 
 See [Initial Implementation Guide](docs/implementation/initial-implementation-guide.md).
 
+For a concrete dummy environment profile, see [Cybelynxcore Production-Like Example](examples/cybelynxcore-production/README.md).
+
 ## Suggested Implementation Order
 
 1. Create the documentation repository and capture naming, access, and ownership rules.

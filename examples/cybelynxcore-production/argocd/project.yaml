@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: cybelynxcore
+  namespace: argocd
+spec:
+  description: Cybelynxcore production-like test project
+  sourceRepos:
+    - https://github.com/TheDivine/devsecops_multi_repo_architecture.git
+  destinations:
+    - namespace: cybelynxcore-production
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist: []
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
