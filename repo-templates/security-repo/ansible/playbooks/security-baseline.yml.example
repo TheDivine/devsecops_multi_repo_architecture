@@ -1,0 +1,19 @@
+---
+- name: Apply security baseline controls
+  hosts: all
+  become: true
+  tasks:
+    - name: Ensure auditd is installed
+      ansible.builtin.package:
+        name: auditd
+        state: present
+
+    - name: Ensure auditd is enabled
+      ansible.builtin.service:
+        name: auditd
+        enabled: true
+        state: started
+
+    - name: Show next security baseline step
+      ansible.builtin.debug:
+        msg: "Copy approved audit, malware scanning, and endpoint monitoring baselines from the security repository."

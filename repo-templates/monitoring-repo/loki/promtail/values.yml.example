@@ -1,0 +1,13 @@
+config:
+  clients:
+    - url: <loki-push-url>
+  snippets:
+    pipelineStages:
+      - cri: {}
+    extraRelabelConfigs:
+      - source_labels:
+          - __meta_kubernetes_namespace
+        target_label: namespace
+      - source_labels:
+          - __meta_kubernetes_pod_name
+        target_label: pod

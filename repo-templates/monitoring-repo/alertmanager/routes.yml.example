@@ -1,0 +1,16 @@
+route:
+  receiver: default-placeholder
+  group_by:
+    - alertname
+    - environment
+    - service
+  routes:
+    - matchers:
+        - severity="critical"
+      receiver: critical-placeholder
+
+receivers:
+  - name: default-placeholder
+  - name: critical-placeholder
+
+templates: []

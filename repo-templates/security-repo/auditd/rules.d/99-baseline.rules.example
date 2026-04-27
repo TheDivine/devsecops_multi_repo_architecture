@@ -1,0 +1,12 @@
+## Generic auditd baseline example.
+## Tune before use in a private implementation repository.
+
+-w /etc/passwd -p wa -k identity
+-w /etc/group -p wa -k identity
+-w /etc/sudoers -p wa -k privilege
+-w /etc/ssh/sshd_config -p wa -k ssh_config
+-w /var/log/auth.log -p wa -k auth_log
+
+## Detect attempts to change system time.
+-a always,exit -F arch=b64 -S adjtimex,settimeofday,clock_settime -k time_change
+-a always,exit -F arch=b32 -S adjtimex,settimeofday,clock_settime -k time_change

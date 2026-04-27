@@ -1,0 +1,8 @@
+---
+wazuh_group: linux-baseline
+expected_controls:
+  - auditd_enabled
+  - ssh_password_authentication_disabled
+  - privileged_file_monitoring
+  - package_inventory_enabled
+notes: "Use as a documentation template for endpoint group policy expectations."

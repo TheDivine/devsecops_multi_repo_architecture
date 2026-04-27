@@ -1,0 +1,13 @@
+---
+scan_policy:
+  schedule: daily
+  scan_paths:
+    - /home
+    - /var/www
+    - /srv
+  exclude_paths:
+    - /proc
+    - /sys
+    - /dev
+  action_on_detection: alert_only
+  notes: "Tune paths and action in a private implementation repository."

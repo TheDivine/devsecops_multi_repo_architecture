@@ -69,6 +69,7 @@ Smaller projects may combine platform, security, and monitoring standards into a
 See:
 
 - [Documentation Index](docs/index.md)
+- [Initial Implementation Guide](docs/implementation/initial-implementation-guide.md)
 - [Recommended Repositories](docs/architecture/recommended-repos.md)
 - [Repository Separation Model](docs/architecture/repo-separation-model.md)
 - [Public/Private Boundary](docs/security/public-private-boundary.md)
@@ -84,6 +85,19 @@ Use `repo-templates/` as starter scaffolding, not as production-ready implementa
 5. Keep runtime deployment ownership in the deployment repository unless the application repository only needs minimal development examples.
 6. Add quality gates before connecting real deployment automation.
 7. Review the repository sanitization checklist before publishing or sharing externally.
+
+## Initial Implementation Examples
+
+This repository includes safe starter implementations that demonstrate the expected structure:
+
+- Ansible roles, group variables, playbooks, and inventory examples for infrastructure baselines.
+- Kubernetes base manifests and staging/production overlays for GitOps deployment repositories.
+- Traefik examples for Docker Compose and Kubernetes routing.
+- Security repository examples for auditd, ClamAV, Wazuh, and baseline playbooks.
+- Monitoring repository examples for Prometheus, Alertmanager, Grafana, and Loki/Promtail.
+- Platform examples for Argo CD project boundaries and Kyverno policy templates.
+
+See [Initial Implementation Guide](docs/implementation/initial-implementation-guide.md).
 
 ## Suggested Implementation Order
 

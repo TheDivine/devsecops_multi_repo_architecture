@@ -1,0 +1,22 @@
+---
+- name: Disable SSH password authentication
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "^#?PasswordAuthentication"
+    line: "PasswordAuthentication no"
+    validate: "sshd -t -f %s"
+  notify: Restart ssh
+  when: baseline_disable_password_authentication | bool
+
+- name: Configure SSH root login policy
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "^#?PermitRootLogin"
+    line: "PermitRootLogin {{ baseline_ssh_permit_root_login }}"
+    validate: "sshd -t -f %s"
+  notify: Restart ssh
+
+- name: Ensure auditd package is present
+  ansible.builtin.package:
+    name: auditd
+    state: present

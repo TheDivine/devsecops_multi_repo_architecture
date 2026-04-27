@@ -6,6 +6,8 @@ This blueprint now includes a broader DevSecOps operating model covering securit
 
 It also includes a public-safe visual hero asset at `docs/assets/devsecops-blueprint-hero.svg` for use in the README, portfolio pages, or generated documentation.
 
+The repository includes starter implementation examples for Ansible baselines, Kubernetes manifests, Traefik routing, security tooling, monitoring rules, and platform policies. These examples are intentionally generic and must be adapted in private implementation repositories before real use.
+
 ## How To Use This Repo
 
 Use this repository as a reference standard before creating real implementation repositories. Copy only the relevant template folders, replace placeholders in private repositories, and keep ownership boundaries explicit.
@@ -22,7 +24,6 @@ Use this repository as a reference standard before creating real implementation 
 - Add an index page that links every document by lifecycle phase.
 - Add example pull request templates for each repository type.
 - Add reusable issue templates for release readiness, rollback, and security exceptions.
-- Add optional policy examples that remain generic and non-deploying.
 - Add a lightweight markdown lint configuration.
 - Add repository topics and branch protection after the first GitHub push.
 - Add a rendered documentation site if this becomes a long-lived internal standard.

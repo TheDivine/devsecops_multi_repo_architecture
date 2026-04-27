@@ -17,7 +17,8 @@ id_dsa
 id_ecdsa
 id_ed25519
 *kubeconfig*
-config
+.kube/config
+*.kubeconfig
 credentials
 secrets/
 private/

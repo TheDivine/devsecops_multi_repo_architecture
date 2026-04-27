@@ -1,0 +1,4 @@
+---
+baseline_disable_password_authentication: true
+baseline_ssh_permit_root_login: "no"
+baseline_manage_firewall: false

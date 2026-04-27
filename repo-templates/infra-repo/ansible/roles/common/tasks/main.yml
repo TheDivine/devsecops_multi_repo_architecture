@@ -1,0 +1,10 @@
+---
+- name: Ensure common packages are installed
+  ansible.builtin.package:
+    name: "{{ baseline_common_packages }}"
+    state: present
+
+- name: Configure timezone
+  community.general.timezone:
+    name: "{{ baseline_timezone }}"
+  when: baseline_timezone is defined

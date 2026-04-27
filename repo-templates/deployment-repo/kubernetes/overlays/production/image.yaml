@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <application-name>
+  namespace: <namespace>
+spec:
+  template:
+    spec:
+      containers:
+        - name: app
+          image: <registry-url>/<project-name>/<application-name>:<production-image-tag>

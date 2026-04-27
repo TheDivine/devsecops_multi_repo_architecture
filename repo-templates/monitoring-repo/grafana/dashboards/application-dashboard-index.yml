@@ -1,0 +1,9 @@
+dashboards:
+  - name: application-overview
+    owner: <team-name>
+    purpose: service health, latency, error rate, and saturation
+    datasource: <prometheus-datasource-name>
+  - name: platform-routing
+    owner: platform
+    purpose: Traefik routing health and ingress error rate
+    datasource: <prometheus-datasource-name>

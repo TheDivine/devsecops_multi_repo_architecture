@@ -1,0 +1,20 @@
+groups:
+  - name: application-health
+    rules:
+      - alert: ApplicationTargetDown
+        expr: up{job="<application-name>"} == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Application target is down"
+          description: "The application scrape target has been unavailable for more than 5 minutes."
+
+      - alert: ApplicationHighErrorRate
+        expr: rate(http_requests_total{job="<application-name>",status=~"5.."}[5m]) > 0.05
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Application error rate is elevated"
+          description: "Tune this query to match application metrics before production use."

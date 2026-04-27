@@ -1,0 +1,12 @@
+---
+baseline_timezone: UTC
+baseline_admin_group: sudo
+baseline_disable_password_authentication: true
+baseline_manage_firewall: false
+baseline_allowed_ssh_users:
+  - <automation-user>
+baseline_common_packages:
+  - ca-certificates
+  - curl
+  - git
+  - unattended-upgrades

@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: <project-name>
+  namespace: argocd
+spec:
+  description: GitOps project boundary for <project-name>
+  sourceRepos:
+    - <deployment-repo-url>
+  destinations:
+    - namespace: <namespace>
+      server: <cluster-api-url>
+  clusterResourceWhitelist: []
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"

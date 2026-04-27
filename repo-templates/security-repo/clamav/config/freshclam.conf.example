@@ -1,0 +1,6 @@
+DatabaseMirror database.clamav.net
+Checks 12
+DatabaseOwner clamav
+UpdateLogFile /var/log/clamav/freshclam.log
+LogTime yes
+Foreground false
