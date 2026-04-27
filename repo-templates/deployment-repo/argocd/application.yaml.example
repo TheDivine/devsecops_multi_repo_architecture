@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: <application-name>-<environment-name>
+  namespace: argocd
+spec:
+  project: <argocd-project>
+  source:
+    repoURL: <deployment-repo-url>
+    targetRevision: main
+    path: kubernetes/overlays/<environment-name>
+  destination:
+    server: <cluster-api-url>
+    namespace: <namespace>
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

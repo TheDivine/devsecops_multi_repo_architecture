@@ -1,0 +1,7 @@
+image:
+  tag: dev
+
+replicaCount: 1
+
+ingress:
+  host: <dev-application-hostname>

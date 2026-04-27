@@ -1,0 +1,7 @@
+image:
+  tag: prod
+
+replicaCount: 3
+
+ingress:
+  host: <production-application-hostname>

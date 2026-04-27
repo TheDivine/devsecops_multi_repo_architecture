@@ -1,0 +1,8 @@
+---
+- name: Apply baseline configuration
+  hosts: all
+  become: true
+  tasks:
+    - name: Show placeholder task
+      ansible.builtin.debug:
+        msg: "Replace with approved baseline roles in a private implementation repository"

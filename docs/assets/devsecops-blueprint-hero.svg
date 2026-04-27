@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="640" viewBox="0 0 1440 640" role="img" aria-labelledby="title desc">
+  <title id="title">DevSecOps Multi-Repo Architecture Blueprint</title>
+  <desc id="desc">A stylized architecture map showing application, deployment, infrastructure, platform, security, monitoring, and documentation repositories connected through safe delivery flows.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08111f"/>
+      <stop offset="0.42" stop-color="#10233f"/>
+      <stop offset="1" stop-color="#123a45"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#162642" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#0d1a2c" stop-opacity="0.92"/>
+    </linearGradient>
+    <linearGradient id="app" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4ade80"/>
+      <stop offset="1" stop-color="#14b8a6"/>
+    </linearGradient>
+    <linearGradient id="deploy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="infra" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+    <linearGradient id="security" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fb7185"/>
+      <stop offset="1" stop-color="#be123c"/>
+    </linearGradient>
+    <linearGradient id="monitoring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.22 0 0 0 0 0.78 0 0 0 0 0.86 0 0 0 0.38 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#67e8f9"/>
+    </marker>
+    <style>
+      .title { fill: #f8fafc; font: 800 52px Arial, sans-serif; letter-spacing: -1.2px; }
+      .subtitle { fill: #cbd5e1; font: 22px Arial, sans-serif; }
+      .small { fill: #94a3b8; font: 16px Arial, sans-serif; }
+      .repo-title { fill: #f8fafc; font: 800 21px Arial, sans-serif; }
+      .repo-text { fill: #dbeafe; font: 14px Arial, sans-serif; }
+      .badge { fill: #06121f; font: 800 12px Arial, sans-serif; letter-spacing: 1.2px; }
+      .line { fill: none; stroke: #67e8f9; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 7 10; marker-end: url(#arrow); opacity: 0.78; }
+      .panel { fill: url(#panel); stroke: #315174; stroke-width: 1.2; }
+      .orbit { fill: none; stroke: #1e7490; stroke-width: 1; opacity: 0.42; }
+      .grid { stroke: #1e3a5f; stroke-width: 1; opacity: 0.28; }
+    </style>
+  </defs>
+
+  <rect width="1440" height="640" fill="url(#bg)"/>
+  <g opacity="0.38">
+    <path class="grid" d="M0 88H1440M0 176H1440M0 264H1440M0 352H1440M0 440H1440M0 528H1440"/>
+    <path class="grid" d="M120 0V640M240 0V640M360 0V640M480 0V640M600 0V640M720 0V640M840 0V640M960 0V640M1080 0V640M1200 0V640M1320 0V640"/>
+  </g>
+  <circle cx="1120" cy="110" r="210" fill="#0ea5e9" opacity="0.12"/>
+  <circle cx="220" cy="500" r="250" fill="#22c55e" opacity="0.10"/>
+  <circle cx="720" cy="350" r="290" class="orbit"/>
+  <circle cx="720" cy="350" r="210" class="orbit"/>
+
+  <text x="90" y="100" class="title">DevSecOps Multi-Repo Blueprint</text>
+  <text x="92" y="140" class="subtitle">Clear ownership, safer delivery, reusable standards, public-safe templates.</text>
+  <text x="92" y="174" class="small">Application builds artifacts. Deployment promotes desired state. Platform, security, monitoring, infrastructure, and docs stay intentionally separated.</text>
+
+  <path class="line" d="M300 326 C410 280 500 280 610 326"/>
+  <path class="line" d="M830 326 C940 280 1030 280 1140 326"/>
+  <path class="line" d="M720 432 C720 500 820 520 960 500"/>
+  <path class="line" d="M610 390 C530 470 420 500 270 490"/>
+  <path class="line" d="M1140 390 C1230 455 1230 515 1110 532"/>
+
+  <g filter="url(#glow)">
+    <rect x="610" y="248" width="220" height="172" rx="26" class="panel"/>
+    <rect x="642" y="282" width="156" height="28" rx="14" fill="url(#deploy)"/>
+    <text x="670" y="302" class="badge">CONTROL PLANE</text>
+    <text x="652" y="344" class="repo-title">Platform Repo</text>
+    <text x="652" y="374" class="repo-text">GitOps standards</text>
+    <text x="652" y="398" class="repo-text">Policies and baselines</text>
+  </g>
+
+  <g>
+    <rect x="112" y="270" width="250" height="132" rx="24" class="panel"/>
+    <rect x="138" y="296" width="82" height="26" rx="13" fill="url(#app)"/>
+    <text x="155" y="315" class="badge">BUILD</text>
+    <text x="138" y="350" class="repo-title">App Repo</text>
+    <text x="138" y="377" class="repo-text">source, tests, CI, image</text>
+  </g>
+
+  <g>
+    <rect x="1078" y="270" width="250" height="132" rx="24" class="panel"/>
+    <rect x="1104" y="296" width="96" height="26" rx="13" fill="url(#deploy)"/>
+    <text x="1122" y="315" class="badge">PROMOTE</text>
+    <text x="1104" y="350" class="repo-title">Deployment Repo</text>
+    <text x="1104" y="377" class="repo-text">manifests, overlays, rollback</text>
+  </g>
+
+  <g>
+    <rect x="130" y="452" width="250" height="112" rx="24" class="panel"/>
+    <rect x="156" y="476" width="104" height="26" rx="13" fill="url(#infra)"/>
+    <text x="173" y="495" class="badge">PROVISION</text>
+    <text x="156" y="530" class="repo-title">Infra Repo</text>
+    <text x="156" y="556" class="repo-text">Terraform/OpenTofu, Ansible</text>
+  </g>
+
+  <g>
+    <rect x="442" y="454" width="250" height="112" rx="24" class="panel"/>
+    <rect x="468" y="478" width="88" height="26" rx="13" fill="url(#security)"/>
+    <text x="486" y="497" class="badge">SECURE</text>
+    <text x="468" y="532" class="repo-title">Security Repo</text>
+    <text x="468" y="558" class="repo-text">hardening, audit, detection</text>
+  </g>
+
+  <g>
+    <rect x="748" y="454" width="250" height="112" rx="24" class="panel"/>
+    <rect x="774" y="478" width="96" height="26" rx="13" fill="url(#monitoring)"/>
+    <text x="789" y="497" class="badge">OBSERVE</text>
+    <text x="774" y="532" class="repo-title">Monitoring Repo</text>
+    <text x="774" y="558" class="repo-text">metrics, logs, alerts</text>
+  </g>
+
+  <g>
+    <rect x="1060" y="452" width="250" height="112" rx="24" class="panel"/>
+    <rect x="1086" y="476" width="76" height="26" rx="13" fill="#e2e8f0"/>
+    <text x="1103" y="495" class="badge">DOCS</text>
+    <text x="1086" y="530" class="repo-title">Docs Repo</text>
+    <text x="1086" y="556" class="repo-text">ADRs, runbooks, onboarding</text>
+  </g>
+
+  <text x="90" y="604" class="small">Public-safe by design: no real credentials, domains, IP addresses, customer names, Terraform state, kubeconfigs, or deployment commands.</text>
+</svg>

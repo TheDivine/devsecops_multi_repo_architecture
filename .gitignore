@@ -1,0 +1,79 @@
+# Environment and local configuration
+.env
+.env.*
+!.env.example
+*.local
+*.override
+
+# Sensitive material
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.csr
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+*kubeconfig*
+config
+credentials
+secrets/
+private/
+
+# Terraform and OpenTofu
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform.lock.hcl
+
+# Ansible
+*.vault
+vault.yml
+vault.yaml
+group_vars/*/vault.*
+host_vars/*/vault.*
+*.retry
+
+# Build outputs and dependencies
+build/
+dist/
+target/
+out/
+coverage/
+node_modules/
+vendor/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Logs and archives
+*.log
+logs/
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.rar
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.codex/

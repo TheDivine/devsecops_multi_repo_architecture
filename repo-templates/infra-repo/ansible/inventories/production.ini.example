@@ -1,0 +1,5 @@
+[production]
+<production-host-1> ansible_host=<production-host-placeholder>
+
+[production:vars]
+ansible_user=<automation-user>

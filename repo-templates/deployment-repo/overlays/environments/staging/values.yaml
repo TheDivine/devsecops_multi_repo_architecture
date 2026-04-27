@@ -1,0 +1,7 @@
+image:
+  tag: staging
+
+replicaCount: 2
+
+ingress:
+  host: <staging-application-hostname>

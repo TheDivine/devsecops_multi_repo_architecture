@@ -1,0 +1,27 @@
+# Avoid unsafe textual diffs for credential-like and binary material.
+.env binary
+.env.* binary
+.env.example text eol=lf
+*.pem binary
+*.key binary
+*.p12 binary
+*.pfx binary
+*.crt binary
+*.der binary
+*.kubeconfig binary
+*.vault binary
+*.tfstate binary
+*.tfstate.* binary
+*.tfplan binary
+*.zip binary
+*.tar binary
+*.tar.gz binary
+*.tgz binary
+
+# Normalize repository documentation and examples.
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.tf text eol=lf
+*.example text eol=lf
+Makefile text eol=lf

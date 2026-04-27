@@ -1,0 +1,5 @@
+[staging]
+<staging-host-1> ansible_host=<staging-host-placeholder>
+
+[staging:vars]
+ansible_user=<automation-user>
