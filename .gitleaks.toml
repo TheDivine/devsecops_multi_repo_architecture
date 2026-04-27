@@ -1,0 +1,15 @@
+title = "DevSecOps multi-repo blueprint gitleaks config"
+
+[allowlist]
+description = "Allow public-safe blueprint placeholders and documentation references."
+paths = [
+  '''docs/tooling/official-links\.md''',
+  '''docs/security/repository-sanitization-checklist\.md''',
+  '''docs/tooling/local-dev-tooling\.md''',
+  '''repo-templates/app-repo/\.gitea/workflows/ci-security\.yml''',
+]
+regexes = [
+  '''<[^>]+>''',
+  '''\$\{\{\s*secrets\.[A-Z0-9_]+\s*\}\}''',
+  '''\$\{[A-Z0-9_]+\}''',
+]

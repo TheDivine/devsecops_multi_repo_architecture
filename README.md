@@ -68,6 +68,7 @@ Smaller projects may combine platform, security, and monitoring standards into a
 
 See:
 
+- [Documentation Index](docs/index.md)
 - [Recommended Repositories](docs/architecture/recommended-repos.md)
 - [Repository Separation Model](docs/architecture/repo-separation-model.md)
 - [Public/Private Boundary](docs/security/public-private-boundary.md)

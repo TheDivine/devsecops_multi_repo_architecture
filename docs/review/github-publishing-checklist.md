@@ -23,7 +23,7 @@ Use this checklist before publishing this blueprint as a public GitHub repositor
 - Add topics such as `devsecops`, `gitops`, `kubernetes`, `sre`, `platform-engineering`, `terraform`, `ansible`, `traefik`.
 - Enable secret scanning if available.
 - Enable branch protection after the first push.
-- Add a license if the repository is intended for reuse by others.
+- Confirm the license is appropriate for the intended reuse model.
 
 ## Final Local Checks
 
