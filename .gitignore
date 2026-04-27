@@ -76,4 +76,5 @@ Thumbs.db
 *.swp
 *.swo
 *~
+.codex
 .codex/

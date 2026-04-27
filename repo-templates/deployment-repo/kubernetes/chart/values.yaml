@@ -10,6 +10,7 @@ service:
 
 ingress:
   enabled: true
+  controller: traefik
   host: <application-hostname>
   tls: true
 

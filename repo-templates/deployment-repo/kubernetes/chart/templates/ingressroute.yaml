@@ -12,4 +12,7 @@ spec:
       services:
         - name: {{ .Chart.Name }}
           port: {{ .Values.service.port }}
+  {{ if .Values.ingress.tls }}
+  tls: {}
+  {{ end }}
 {{- end }}

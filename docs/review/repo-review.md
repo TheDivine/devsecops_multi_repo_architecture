@@ -24,6 +24,8 @@ Use this repository as a reference standard before creating real implementation 
 - Add reusable issue templates for release readiness, rollback, and security exceptions.
 - Add optional policy examples that remain generic and non-deploying.
 - Add a lightweight markdown lint configuration.
+- Add a license before encouraging external reuse.
+- Add repository topics and branch protection after the first GitHub push.
 
 ## Alignment With Repository Types
 
