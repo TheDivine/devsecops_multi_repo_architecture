@@ -1,0 +1,12 @@
+---
+- name: Restart ssh
+  ansible.builtin.service:
+    name: ssh
+    state: restarted
+  when: ansible_service_mgr is defined
+
+- name: Restart auditd
+  ansible.builtin.service:
+    name: auditd
+    state: restarted
+  when: ansible_service_mgr is defined

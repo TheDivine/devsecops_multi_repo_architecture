@@ -7,6 +7,7 @@ These commands only render or validate local files when the tools are installed:
 ```sh
 kustomize build examples/cybelynxcore-production/kubernetes
 ansible-playbook --syntax-check -i examples/cybelynxcore-production/infra/ansible/inventory.ini.example examples/cybelynxcore-production/infra/ansible/playbooks/bootstrap.yml
+ansible-playbook --syntax-check -i examples/cybelynxcore-production/infra/ansible/inventory.ini.example examples/cybelynxcore-production/infra/ansible/playbooks/validate-baseline.yml
 terraform -chdir=examples/cybelynxcore-production/infra/terraform fmt -check
 terraform -chdir=examples/cybelynxcore-production/infra/terraform validate
 ```
@@ -21,3 +22,6 @@ Do not run commands that mutate infrastructure from this repository.
 - Configure real secret-management integration.
 - Validate Traefik CRDs and middleware in the target cluster.
 - Validate NetworkPolicy behavior with the target CNI.
+- Validate Ansible roles against the target operating system.
+- Validate Kyverno policies in audit mode before enforcement.
+- Validate ServiceMonitor labels against the Prometheus Operator selector configuration.

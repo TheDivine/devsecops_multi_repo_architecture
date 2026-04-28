@@ -1,0 +1,6 @@
+---
+baseline_timezone: UTC
+baseline_common_packages:
+  - ca-certificates
+  - curl
+  - git

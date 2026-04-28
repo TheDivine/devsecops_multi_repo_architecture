@@ -8,6 +8,7 @@ resources:
   - networkpolicy.yaml
   - pdb.yaml
   - hpa.yaml
-commonLabels:
-  app.kubernetes.io/part-of: cybelynxcore
-  app.kubernetes.io/managed-by: gitops
+labels:
+  - pairs:
+      app.kubernetes.io/part-of: cybelynxcore
+      app.kubernetes.io/managed-by: gitops

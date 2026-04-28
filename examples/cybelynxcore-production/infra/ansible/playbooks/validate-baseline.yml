@@ -1,0 +1,12 @@
+---
+- name: Validate baseline assumptions without changing nodes
+  hosts: production
+  gather_facts: false
+  tasks:
+    - name: Validate required baseline variables exist
+      ansible.builtin.assert:
+        that:
+          - baseline_timezone is defined
+          - baseline_disable_password_authentication is defined
+          - baseline_ssh_permit_root_login is defined
+          - baseline_common_packages | length > 0

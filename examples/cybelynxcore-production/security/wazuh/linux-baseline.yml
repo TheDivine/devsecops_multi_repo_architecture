@@ -1,0 +1,9 @@
+---
+wazuh_group: cybelynxcore-linux-production
+expected_controls:
+  - auditd_enabled
+  - ssh_password_authentication_disabled
+  - sudoers_monitoring
+  - package_inventory_enabled
+  - file_integrity_monitoring
+notes: "Dummy endpoint-monitoring group baseline for production-like testing."

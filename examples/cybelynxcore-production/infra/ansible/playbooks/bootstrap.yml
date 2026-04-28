@@ -2,13 +2,7 @@
 - name: Bootstrap cybelynxcore production-like nodes
   hosts: production
   become: true
-  tasks:
-    - name: Show baseline scope
-      ansible.builtin.debug:
-        msg: "Apply common and security baseline roles from repo-templates/infra-repo/ansible/roles in a private implementation repository."
-
-    - name: Validate baseline variables are loaded
-      ansible.builtin.assert:
-        that:
-          - baseline_timezone is defined
-          - baseline_disable_password_authentication is defined
+  roles:
+    - role: common
+    - role: security_baseline
+    - role: observability_agent

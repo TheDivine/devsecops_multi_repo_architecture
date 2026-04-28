@@ -9,3 +9,6 @@ baseline_common_packages:
   - git
   - auditd
   - unattended-upgrades
+  - prometheus-node-exporter
+security_audit_rules_path: /etc/audit/rules.d/99-cybelynxcore.rules
+observability_node_exporter_enabled: true

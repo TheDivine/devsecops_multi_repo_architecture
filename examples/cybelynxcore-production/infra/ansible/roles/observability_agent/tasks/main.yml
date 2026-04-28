@@ -1,0 +1,15 @@
+---
+- name: Ensure node exporter package is installed
+  ansible.builtin.package:
+    name: prometheus-node-exporter
+    state: present
+  when: observability_node_exporter_enabled | bool
+
+- name: Ensure node exporter service is enabled
+  ansible.builtin.service:
+    name: prometheus-node-exporter
+    enabled: true
+    state: started
+  when:
+    - observability_node_exporter_enabled | bool
+    - ansible_service_mgr is defined

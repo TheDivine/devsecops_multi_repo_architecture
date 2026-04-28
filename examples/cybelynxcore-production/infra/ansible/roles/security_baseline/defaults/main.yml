@@ -1,0 +1,4 @@
+---
+baseline_disable_password_authentication: true
+baseline_ssh_permit_root_login: "no"
+security_audit_rules_path: /etc/audit/rules.d/99-cybelynxcore.rules
