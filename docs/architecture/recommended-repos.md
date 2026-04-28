@@ -129,6 +129,16 @@ Contains:
 
 This repo acts as the internal product for platform engineering.
 
+Concrete starter paths in this blueprint:
+
+```text
+templates/platform-repo/
+  ci-templates/
+  scanner-policies/
+  defectdojo/
+  policies/
+```
+
 ## 6. Security Repository
 
 Example:
@@ -165,6 +175,8 @@ Contains:
 - Loki logging standards
 - Alertmanager routing templates
 - observability ownership documentation
+- VM file service discovery examples
+- Kubernetes ServiceMonitor examples
 
 Does not contain:
 - live datasource credentials

@@ -1,0 +1,12 @@
+- targets:
+    - app-01.internal.example:9100
+  labels:
+    job: node
+    environment: staging
+    service: <application-name>
+- targets:
+    - app-01.internal.example:8000
+  labels:
+    job: <application-name>
+    environment: staging
+    runtime: docker-compose

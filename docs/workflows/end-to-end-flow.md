@@ -13,7 +13,7 @@
    - Trivy image scan
    - SBOM generation
 3. Image is pushed to registry.
-4. Security reports are uploaded to DefectDojo.
+4. Security reports are uploaded to DefectDojo when the project uses centralized AppSec triage.
 5. Deployment repo is updated with image tag.
 6. Deployment pipeline or GitOps sync deploys to environment.
 
