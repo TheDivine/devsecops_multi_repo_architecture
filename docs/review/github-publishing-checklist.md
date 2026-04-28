@@ -5,7 +5,7 @@ Use this checklist before publishing this blueprint as a public GitHub repositor
 ## Repository Shape
 
 - `README.md` is at the Git repository root.
-- `docs/` and `repo-templates/` are at the Git repository root.
+- `docs/` and `templates/` are at the Git repository root.
 - No nested duplicate project directory exists.
 - Local artifacts such as `.codex` are not staged.
 

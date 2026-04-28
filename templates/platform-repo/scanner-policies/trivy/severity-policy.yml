@@ -1,0 +1,15 @@
+vulnerability_gate:
+  fail_on:
+    - CRITICAL
+    - HIGH
+  allow_unfixed: true
+  required_outputs:
+    - sarif
+    - cyclonedx
+  exception_fields:
+    - finding_id
+    - affected_component
+    - owner
+    - expiry_date
+    - compensating_control
+    - approval_reference

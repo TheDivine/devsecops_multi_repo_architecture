@@ -1,0 +1,5 @@
+DEFECTDOJO_URL=https://defectdojo.internal.example
+DEFECTDOJO_API_KEY=<private-ci-secret>
+DEFECTDOJO_PRODUCT_NAME=<project-name>
+DEFECTDOJO_ENGAGEMENT_NAME=<environment-name>-ci
+DEFECTDOJO_MINIMUM_SEVERITY=High

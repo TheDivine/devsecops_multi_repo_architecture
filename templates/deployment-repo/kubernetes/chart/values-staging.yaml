@@ -1,0 +1,8 @@
+image:
+  repository: registry.example.com/demo-client/app
+  tag: <staging-commit-sha>
+
+replicaCount: 2
+
+ingress:
+  host: staging.app.example.com

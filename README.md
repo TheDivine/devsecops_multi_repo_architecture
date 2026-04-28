@@ -69,14 +69,17 @@ Smaller projects may combine platform, security, and monitoring standards into a
 See:
 
 - [Documentation Index](docs/index.md)
+- [Current State Assessment](docs/assessment/current-state-assessment.md)
 - [Initial Implementation Guide](docs/implementation/initial-implementation-guide.md)
+- [Production Hardening Guide](docs/implementation/production-hardening-guide.md)
+- [Demo Client Implementation Guide](docs/implementation/demo-client-implementation-guide.md)
 - [Recommended Repositories](docs/architecture/recommended-repos.md)
 - [Repository Separation Model](docs/architecture/repo-separation-model.md)
 - [Public/Private Boundary](docs/security/public-private-boundary.md)
 
 ## How To Use The Templates
 
-Use `repo-templates/` as starter scaffolding, not as production-ready implementation code.
+Use `templates/` as starter scaffolding, not as production-ready implementation code.
 
 1. Pick the repo template that matches the target repository type.
 2. Copy only the relevant folders into the new repository.
@@ -96,8 +99,11 @@ This repository includes safe starter implementations that demonstrate the expec
 - Security repository examples for auditd, ClamAV, Wazuh, and baseline playbooks.
 - Monitoring repository examples for Prometheus, Alertmanager, Grafana, and Loki/Promtail.
 - Platform examples for Argo CD project boundaries and Kyverno policy templates.
+- Platform hardening examples for reusable CI, scanner policies, DefectDojo imports, and policy-as-code.
+- Monitoring examples for VM scrape targets and Kubernetes ServiceMonitor patterns.
 
 See [Initial Implementation Guide](docs/implementation/initial-implementation-guide.md).
+See [Production Hardening Guide](docs/implementation/production-hardening-guide.md) for the end-to-end hardening path.
 
 For a concrete dummy environment profile, see [Cybelynxcore Production-Like Example](examples/cybelynxcore-production/README.md).
 
@@ -134,14 +140,29 @@ docs/
   quality-gates/
   security/
   tooling/
-repo-templates/
+templates/
   app-repo/
   deployment-repo/
   docs-repo/
-  infra-repo/
+  infrastructure-repo/
   monitoring-repo/
   platform-repo/
   security-repo/
+modules/
+  appsec/
+  defectdojo/
+  monitoring/
+  policy-as-code/
+  docker-compose/
+  kubernetes-security/
+  cloud-aws/
+scripts/
+  defectdojo/
+  policy/
+  release/
+policies/
+checklists/
+examples/
 ```
 
 Start with [docs/review/repo-review.md](docs/review/repo-review.md) after reviewing the full repository.

@@ -1,0 +1,11 @@
+scrape_configs:
+  - job_name: demo-client-app
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - app.example.com:443
+
+  - job_name: node-exporter
+    file_sd_configs:
+      - files:
+          - /etc/prometheus/file_sd/nodes.yml
