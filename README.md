@@ -101,26 +101,6 @@ See [Initial Implementation Guide](docs/implementation/initial-implementation-gu
 
 For a concrete dummy environment profile, see [Cybelynxcore Production-Like Example](examples/cybelynxcore-production/README.md).
 
-## Manual E2E Kubernetes Lab
-
-This blueprint now includes a manual-first, production-shaped Kubernetes lab path. It is designed to teach the full DevSecOps flow without blindly deploying production:
-
-```text
-code commit
--> Forgejo Actions CI
--> tests and security scans
--> immutable image in Forgejo registry
--> deployment repo image tag update
--> Argo CD sync to staging
--> Traefik exposure
--> Prometheus/Grafana checks
--> OWASP ZAP DAST
--> DefectDojo review
--> optional production promotion after approval
-```
-
-Start with [E2E Kubernetes DevSecOps Lab Guide](docs/implementation/e2e-kubernetes-devsecops-lab-guide.md), then follow the [Demo App Kubernetes Deployment Plan](docs/implementation/demo-app-kubernetes-deployment-plan.md).
-
 ## Suggested Implementation Order
 
 1. Create the documentation repository and capture naming, access, and ownership rules.
@@ -154,8 +134,6 @@ docs/
   quality-gates/
   security/
   tooling/
-  implementation/
-  blog/
 repo-templates/
   app-repo/
   deployment-repo/

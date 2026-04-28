@@ -8,20 +8,8 @@ Use this index to navigate the blueprint by lifecycle phase.
 - [GitHub Publishing Checklist](review/github-publishing-checklist.md)
 - [Initial Implementation Guide](implementation/initial-implementation-guide.md)
 - [Cybelynxcore Production-Like Example](../examples/cybelynxcore-production/README.md)
-- [E2E Kubernetes DevSecOps Lab Guide](implementation/e2e-kubernetes-devsecops-lab-guide.md)
-- [Demo App Kubernetes Deployment Plan](implementation/demo-app-kubernetes-deployment-plan.md)
 - [Repository Separation Model](architecture/repo-separation-model.md)
 - [Recommended Repositories](architecture/recommended-repos.md)
-
-## Manual E2E Lab Implementation
-
-- [E2E Kubernetes DevSecOps Lab Guide](implementation/e2e-kubernetes-devsecops-lab-guide.md)
-- [Demo Repository Creation Guide](implementation/demo-repo-creation-guide.md)
-- [Dev/Staging/Production Environment Model](implementation/dev-staging-production-environment-model.md)
-- [Forgejo CI/CD E2E Guide](implementation/forgejo-ci-cd-e2e-guide.md)
-- [DefectDojo Setup And Integration Guide](implementation/defectdojo-setup-and-integration-guide.md)
-- [Kubernetes Tooling Readiness And Install Plan](implementation/kubernetes-tooling-readiness-and-install-plan.md)
-- [Demo App Kubernetes Deployment Plan](implementation/demo-app-kubernetes-deployment-plan.md)
 
 ## Architecture
 
@@ -47,7 +35,6 @@ Use this index to navigate the blueprint by lifecycle phase.
 - [Image Promotion Model](gitops/image-promotion-model.md)
 - [Argo CD Application Patterns](gitops/argocd-application-patterns.md)
 - [Environment Promotion](gitops/environment-promotion.md)
-- [End-to-End Workflow](workflows/end-to-end-flow.md)
 
 ## Operations
 
@@ -70,7 +57,3 @@ Use this index to navigate the blueprint by lifecycle phase.
 - [Official Links](tooling/official-links.md)
 - [Recommended Tools](tooling/recommended-tools.md)
 - [Local Development Tooling](tooling/local-dev-tooling.md)
-
-## Blog And Portfolio Narrative
-
-- [Building A Production-Shaped E2E DevSecOps Platform Lab](blog/e2e-devsecops-kubernetes-platform-lab.md)
