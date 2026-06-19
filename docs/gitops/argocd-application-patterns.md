@@ -22,4 +22,4 @@ The application repository owns build inputs and image publishing, not productio
 
 ## Placeholder Example
 
-See `repo-templates/deployment-repo/argocd/application.yaml.example`.
+See `templates/deployment-repo/argocd/application.yaml.example`.

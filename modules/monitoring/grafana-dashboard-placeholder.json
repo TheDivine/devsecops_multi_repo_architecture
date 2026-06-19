@@ -1,0 +1,22 @@
+{
+  "title": "Application Overview",
+  "schemaVersion": 39,
+  "tags": ["devsecops", "application"],
+  "panels": [
+    {
+      "title": "Request Rate",
+      "type": "timeseries",
+      "targets": []
+    },
+    {
+      "title": "5xx Rate",
+      "type": "timeseries",
+      "targets": []
+    },
+    {
+      "title": "Restarts",
+      "type": "timeseries",
+      "targets": []
+    }
+  ]
+}

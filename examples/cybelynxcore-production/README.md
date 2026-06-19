@@ -38,7 +38,7 @@ Use these as safe local checks where the tools are installed:
 
 ```sh
 kustomize build examples/cybelynxcore-production/kubernetes
-helm lint repo-templates/deployment-repo/kubernetes/chart
+helm lint templates/deployment-repo/kubernetes/chart
 ansible-playbook --syntax-check -i examples/cybelynxcore-production/infra/ansible/inventory.ini.example examples/cybelynxcore-production/infra/ansible/playbooks/bootstrap.yml
 ansible-playbook --syntax-check -i examples/cybelynxcore-production/infra/ansible/inventory.ini.example examples/cybelynxcore-production/infra/ansible/playbooks/validate-baseline.yml
 ```

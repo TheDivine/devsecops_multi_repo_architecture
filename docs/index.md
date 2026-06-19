@@ -5,8 +5,11 @@ Use this index to navigate the blueprint by lifecycle phase.
 ## Start Here
 
 - [Repository Review](review/repo-review.md)
+- [Current State Assessment](assessment/current-state-assessment.md)
 - [GitHub Publishing Checklist](review/github-publishing-checklist.md)
 - [Initial Implementation Guide](implementation/initial-implementation-guide.md)
+- [Production Hardening Guide](implementation/production-hardening-guide.md)
+- [Demo Client Implementation Guide](implementation/demo-client-implementation-guide.md)
 - [Cybelynxcore Production-Like Example](../examples/cybelynxcore-production/README.md)
 - [Repository Separation Model](architecture/repo-separation-model.md)
 - [Recommended Repositories](architecture/recommended-repos.md)
@@ -26,6 +29,7 @@ Use this index to navigate the blueprint by lifecycle phase.
 - [Public/Private Boundary](security/public-private-boundary.md)
 - [Repository Sanitization Checklist](security/repository-sanitization-checklist.md)
 - [Security Gates](quality-gates/security-gates.md)
+- [Policy-As-Code Boundary ADR](architecture/decision-records/ADR-009-policy-as-code-boundaries.md)
 
 ## Delivery And GitOps
 
@@ -35,6 +39,11 @@ Use this index to navigate the blueprint by lifecycle phase.
 - [Image Promotion Model](gitops/image-promotion-model.md)
 - [Argo CD Application Patterns](gitops/argocd-application-patterns.md)
 - [Environment Promotion](gitops/environment-promotion.md)
+- [DefectDojo Standardization ADR](architecture/decision-records/ADR-008-defectdojo-standardization.md)
+- [Dual Runtime Support ADR](architecture/decision-records/ADR-010-dual-runtime-support.md)
+- [Registry Placement ADR](architecture/decision-records/ADR-011-registry-placement.md)
+- [Severity Gating ADR](architecture/decision-records/ADR-012-severity-gating-strategy.md)
+- [Monitoring And SIEM ADR](architecture/decision-records/ADR-013-monitoring-and-siem-strategy.md)
 
 ## Operations
 

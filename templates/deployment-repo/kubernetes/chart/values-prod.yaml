@@ -1,0 +1,8 @@
+image:
+  repository: registry.example.com/demo-client/app
+  tag: <production-commit-sha>
+
+replicaCount: 3
+
+ingress:
+  host: app.example.com

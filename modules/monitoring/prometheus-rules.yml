@@ -1,0 +1,36 @@
+groups:
+  - name: platform-application-alerts
+    rules:
+      - alert: ApplicationDown
+        expr: up{job=~".*app.*"} == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: Application target is down
+          description: Prometheus cannot scrape the application target.
+
+      - alert: ApplicationHigh5xxRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.05
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: Application 5xx rate is elevated
+          description: Tune the metric and threshold per application.
+
+      - alert: ContainerRestartLoop
+        expr: increase(container_start_time_seconds[10m]) > 3
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: Container restart loop detected
+
+      - alert: DiskPressure
+        expr: (node_filesystem_avail_bytes{fstype!~"tmpfs|overlay"} / node_filesystem_size_bytes{fstype!~"tmpfs|overlay"}) < 0.15
+        for: 15m
+        labels:
+          severity: warning
+        annotations:
+          summary: Host disk free space below 15 percent

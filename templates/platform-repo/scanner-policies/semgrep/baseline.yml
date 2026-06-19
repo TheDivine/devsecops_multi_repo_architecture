@@ -1,0 +1,8 @@
+rules:
+  - id: disallow-hardcoded-secret-like-values
+    patterns:
+      - pattern-regex: '(password|secret|token|client_secret|private_key)\s*[:=]\s*["''][^<${][^"'']{8,}["'']'
+    message: Do not commit secret-like values. Use placeholders in public repos and private secret stores in implementation repos.
+    severity: ERROR
+    languages:
+      - generic

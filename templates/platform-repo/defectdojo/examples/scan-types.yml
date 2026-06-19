@@ -1,0 +1,19 @@
+scan_types:
+  gitleaks:
+    report_file: gitleaks.json
+    defectdojo_scan_type: Gitleaks Scan
+  semgrep:
+    report_file: semgrep.json
+    defectdojo_scan_type: Semgrep JSON Report
+  trivy_filesystem:
+    report_file: trivy-fs.sarif
+    defectdojo_scan_type: Trivy Scan
+  trivy_image:
+    report_file: trivy-image.sarif
+    defectdojo_scan_type: Trivy Scan
+  checkov:
+    report_file: checkov.sarif
+    defectdojo_scan_type: Checkov Scan
+  cyclonedx:
+    report_file: sbom.cdx.json
+    defectdojo_scan_type: CycloneDX Scan

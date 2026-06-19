@@ -1,0 +1,23 @@
+services:
+  app:
+    image: ${APP_IMAGE}
+    restart: unless-stopped
+    env_file:
+      - .env.staging
+    networks:
+      - traefik
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.app-staging.rule=Host(`${APP_DOMAIN}`)
+      - traefik.http.routers.app-staging.entrypoints=websecure
+      - traefik.http.routers.app-staging.tls.certresolver=letsencrypt
+      - traefik.http.services.app-staging.loadbalancer.server.port=8000
+
+networks:
+  traefik:
+    external: true

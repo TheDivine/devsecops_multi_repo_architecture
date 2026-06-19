@@ -1,0 +1,37 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-workload-security-controls
+spec:
+  validationFailureAction: Audit
+  background: true
+  rules:
+    - name: require-non-root-and-probes
+      match:
+        any:
+          - resources:
+              kinds:
+                - Deployment
+      validate:
+        message: Workloads must run non-root, disable privilege escalation, define probes, and set resources.
+        pattern:
+          spec:
+            template:
+              spec:
+                securityContext:
+                  runAsNonRoot: true
+                containers:
+                  - readinessProbe: "?*"
+                    livenessProbe: "?*"
+                    resources:
+                      requests:
+                        cpu: "?*"
+                        memory: "?*"
+                      limits:
+                        cpu: "?*"
+                        memory: "?*"
+                    securityContext:
+                      allowPrivilegeEscalation: false
+                      capabilities:
+                        drop:
+                          - ALL

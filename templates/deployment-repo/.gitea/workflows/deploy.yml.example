@@ -1,0 +1,45 @@
+name: deployment-cd
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "dev, staging, or prod"
+        required: true
+      image_tag:
+        description: "Immutable commit SHA image tag"
+        required: true
+
+jobs:
+  deploy-non-prod:
+    if: inputs.environment != 'prod'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy
+        run: scripts/deploy.sh "${{ inputs.environment }}" "${{ inputs.image_tag }}"
+
+      - name: Health check
+        run: echo "Health check is performed by scripts/deploy.sh"
+
+      - name: DAST staging placeholder
+        if: inputs.environment == 'staging'
+        run: |
+          echo "Run OWASP ZAP against staging and import zap-staging.json into DefectDojo."
+
+  deploy-prod:
+    if: inputs.environment == 'prod'
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Manual gate satisfied
+        run: echo "Production environment approval is required before this job runs."
+
+      - name: Deploy production
+        run: scripts/deploy.sh prod "${{ inputs.image_tag }}"

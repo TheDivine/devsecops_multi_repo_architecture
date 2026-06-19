@@ -1,0 +1,41 @@
+image:
+  repository: <registry-url>/<project-name>/app
+  tag: <commit-sha>
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+
+replicaCount: 2
+
+service:
+  port: 8000
+
+ingress:
+  enabled: true
+  controller: traefik
+  host: <application-hostname>
+  tls: true
+
+networkPolicy:
+  enabled: true
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+securityContext:
+  runAsNonRoot: true
+  runAsUser: 10001
+  runAsGroup: 10001
+  fsGroup: 10001
+
+containerSecurityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  capabilities:
+    drop:
+      - ALL
