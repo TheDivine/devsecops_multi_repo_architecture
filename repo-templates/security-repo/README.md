@@ -16,3 +16,7 @@ This repository template contains reusable security baselines, host hardening gu
 - production deployment overlays
 - Terraform state
 - real incident evidence
+
+## Reference Blueprints
+
+- [Wazuh/SIEM Integration Blueprint](wazuh/README.md) - discovery, WAF log integration, detection engineering, triage, ownership, and sizing guidance.

@@ -1,0 +1,10 @@
+# Synthetic one-line fixtures for non-production wazuh-logtest use only.
+# IP addresses use RFC 5737 documentation ranges. URI values are sanitized.
+WAF_EVENT timestamp=2026-01-15T10:20:30Z srcip=192.0.2.10 method=GET uri=/catalog?query=SANITIZED_SQLI_MARKER action=blocked status=403 category=sqli rule_id=EXAMPLE-1001
+WAF_EVENT timestamp=2026-01-15T10:20:31Z srcip=198.51.100.20 method=GET uri=/search?q=SANITIZED_XSS_MARKER action=blocked status=403 category=xss rule_id=EXAMPLE-1002
+WAF_EVENT timestamp=2026-01-15T10:20:32Z srcip=203.0.113.30 method=GET uri=/files/SANITIZED_LFI_MARKER action=blocked status=403 category=lfi rule_id=EXAMPLE-1003
+WAF_EVENT timestamp=2026-01-15T10:20:33Z srcip=192.0.2.40 method=GET uri=/fetch?source=SANITIZED_RFI_MARKER action=blocked status=403 category=rfi rule_id=EXAMPLE-1004
+WAF_EVENT timestamp=2026-01-15T10:20:34Z srcip=198.51.100.50 method=GET uri=/robots.txt action=observed status=200 category=scanner rule_id=EXAMPLE-1005
+WAF_EVENT timestamp=2026-01-15T10:20:35Z srcip=203.0.113.60 method=GET uri=/SANITIZED_SUSPICIOUS_PATH action=blocked status=404 category=suspicious_uri rule_id=EXAMPLE-1006
+WAF_EVENT timestamp=2026-01-15T10:20:36Z srcip=192.0.2.70 method=GET uri=/health action=allowed status=200 category=benign rule_id=EXAMPLE-0000
+WAF_EVENT timestamp=2026-01-15T10:20:37Z srcip=198.51.100.80 method=POST uri=/login action=allowed status=200 category=sqli rule_id=EXAMPLE-1007

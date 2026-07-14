@@ -8,6 +8,10 @@ It also includes a public-safe visual hero asset at `docs/assets/devsecops-bluep
 
 The repository includes starter implementation examples for Ansible baselines, Kubernetes manifests, Traefik routing, security tooling, monitoring rules, and platform policies. These examples are intentionally generic and must be adapted in private implementation repositories before real use.
 
+The security template now includes a public-safe [Wazuh/SIEM integration blueprint](../../repo-templates/security-repo/wazuh/README.md) covering architecture and fit review, WAF log onboarding, custom decoder and rule examples, alert operations, ownership, sizing, retention, escalation, and tool-category comparison.
+
+The Wazuh blueprint records a reviewed Wazuh 4.14.6 stable reference boundary, keeps Wazuh 5.0 beta explicitly out of scope, and adds a reusable compatibility, hardening, and upgrade-gate checklist.
+
 ## How To Use This Repo
 
 Use this repository as a reference standard before creating real implementation repositories. Copy only the relevant template folders, replace placeholders in private repositories, and keep ownership boundaries explicit.
