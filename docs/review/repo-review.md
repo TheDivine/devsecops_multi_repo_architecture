@@ -12,6 +12,10 @@ The security template now includes a public-safe [Wazuh/SIEM integration bluepri
 
 The Wazuh blueprint records a reviewed Wazuh 4.14.6 stable reference boundary, keeps Wazuh 5.0 beta explicitly out of scope, and adds a reusable compatibility, hardening, and upgrade-gate checklist.
 
+The repository also includes a cross-repository [Policy as Code Operating Model](../policy-as-code/operating-model.md), tested Conftest policies for application build handoff, Kubernetes deployment manifests, Terraform/OpenTofu destructive changes, and Prometheus alert metadata, plus Kyverno admission and exception tests. A root policy-validation workflow pins its action and policy CLI versions and verifies release checksums.
+
+The blueprint now documents its [DevSecOps principles](../foundations/devsecops-principles.md), [responsibility model](../governance/devsecops-responsibility-model.md), [framework alignment](../governance/framework-alignment.md), and [research sources](../references/research-and-standards.md). The alignment uses NIST, OWASP, SLSA, CIS, MITRE ATT&CK, and CISA guidance as adaptable references and explicitly avoids certification or compliance claims.
+
 ## How To Use This Repo
 
 Use this repository as a reference standard before creating real implementation repositories. Copy only the relevant template folders, replace placeholders in private repositories, and keep ownership boundaries explicit.
@@ -25,11 +29,11 @@ Use this repository as a reference standard before creating real implementation 
 
 ## Suggested Next Improvements
 
-- Add an index page that links every document by lifecycle phase.
-- Add example pull request templates for each repository type.
-- Add reusable issue templates for release readiness, rollback, and security exceptions.
-- Add a lightweight markdown lint configuration.
-- Add repository topics and branch protection after the first GitHub push.
+- Expand the root validation workflow beyond policy tests to documentation links, formats, Terraform, Ansible, Kustomize, Helm, Compose, and public-safety checks.
+- Harden all copied CI examples with minimal permissions, full-SHA action pinning, trusted release boundaries, SBOMs, provenance, and short-lived credentials where supported.
+- Add a public-safe DevSecOps assessment pack with evidence, risk, RACI, exception, maturity, and roadmap templates.
+- Add Wazuh decoder and rule behavior tests in a pinned, isolated Wazuh validation environment.
+- Configure and review repository rulesets, required checks, ownership, dependency updates, and security features on the hosting platform.
 - Add a rendered documentation site if this becomes a long-lived internal standard.
 
 ## Alignment With Repository Types

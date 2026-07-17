@@ -18,6 +18,7 @@ Supported modes:
 2. Kubernetes mode
 
 Docker Compose mode:
+
 - production compose files
 - Traefik labels
 - VM firewall assumptions
@@ -25,6 +26,7 @@ Docker Compose mode:
 - service-specific environment files
 
 Kubernetes mode:
+
 - Helm chart or Kustomize base
 - environment values
 - IngressRoute/Ingress

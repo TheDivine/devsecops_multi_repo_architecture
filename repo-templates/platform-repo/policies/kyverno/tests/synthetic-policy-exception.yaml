@@ -1,0 +1,21 @@
+apiVersion: kyverno.io/v2
+kind: PolicyException
+metadata:
+  name: synthetic-wazuh-exception
+  namespace: policy-exceptions
+spec:
+  background: true
+  exceptions:
+    - policyName: disallow-privileged-containers
+      ruleNames:
+        - disallow-privileged-containers
+  match:
+    any:
+      - resources:
+          kinds:
+            - Pod
+          namespaces:
+            - wazuh-system
+          selector:
+            matchLabels:
+              security.example/policy-exception-id: SYNTHETIC-WAZUH-EXCEPTION

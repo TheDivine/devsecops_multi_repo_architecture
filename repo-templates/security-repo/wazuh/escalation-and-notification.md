@@ -66,3 +66,7 @@ Document primary and fallback roles, coverage hours, acknowledgement target, esc
 - Review exceptions and cooldowns so temporary relief does not become permanent blindness.
 
 Use [Alert Triage Workflow](alert-triage-workflow.md) for analyst decisions and [Rule Tuning Process](rule-tuning-process.md) for controlled noise reduction.
+
+## Pilot Default: Alert-Only Routing
+
+For a new Wazuh pilot, default external email/chat/ticket notifications to agreed critical and high alerts only. Keep medium, low, and informational events in the dashboard or scheduled review until signal quality and triage capacity are measured. Send the minimum alert context and link back to the controlled system; do not send full raw events, request bodies, cookies, authorization headers, tokens, or sensitive customer data through notification channels.

@@ -5,5 +5,8 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingressroute.yaml
-commonLabels:
-  app.kubernetes.io/part-of: <project-name>
+labels:
+  - pairs:
+      app.kubernetes.io/part-of: <project-name>
+    includeSelectors: true
+    includeTemplates: true

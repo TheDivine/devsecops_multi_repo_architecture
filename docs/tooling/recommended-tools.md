@@ -22,6 +22,7 @@
 - Gitleaks for repository sensitive-data scanning.
 - SOPS, Sealed Secrets, or External Secrets Operator for managed runtime value workflows.
 - Falco and Kyverno for runtime and policy controls where Kubernetes is used.
+- Open Policy Agent and Conftest for testable policy decisions over structured CI, deployment, infrastructure, and monitoring artifacts.
 
 ## Observability
 

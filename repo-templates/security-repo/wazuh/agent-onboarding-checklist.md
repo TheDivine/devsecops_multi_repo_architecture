@@ -14,6 +14,14 @@ Use one reviewed record per asset class or controlled rollout group. Store real 
 - [ ] Least-privilege access is sufficient for the agent to read only approved sources.
 - [ ] The destination agent group and policy inheritance have been reviewed.
 
+## Deployment Method
+
+- [ ] Standalone server agents use pinned, reviewed automation such as Ansible, with inventories and enrollment secrets kept private.
+- [ ] Canary deployment, upgrade, rollback, and package/repository pinning are tested before wider rollout.
+- [ ] DOKS node monitoring is evaluated against lower-privilege log-forwarding alternatives before selecting a DaemonSet.
+- [ ] Any privileged DaemonSet documents exact host access, uses GitOps, and has a narrow policy-as-code exception with owner and expiry.
+- [ ] DOKS node drain, replacement, autoscaling, and Kubernetes upgrade behavior are tested.
+
 ## Enroll
 
 - [ ] Use the organization's private enrollment workflow; do not place keys, passwords, tokens, or real manager addresses in this repository.

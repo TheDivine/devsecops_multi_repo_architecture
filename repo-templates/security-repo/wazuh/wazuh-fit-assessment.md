@@ -14,6 +14,8 @@ Use this checklist during discovery. A checked box means the question has an evi
 - [ ] Assets requiring monitoring are inventoried by type, operating system, location, criticality, and owner.
 - [ ] Current WAF, reverse-proxy, application, operating-system, identity, cloud, container, and network log sources are catalogued.
 - [ ] Each source has a known format, timestamp, rotation policy, expected volume, sensitivity, and authoritative owner.
+- [ ] For managed Cloudflare WAF usage, the required Logpush/API dataset, plan entitlement, fields, destination, latency, privacy, and delivery monitoring are confirmed.
+- [ ] Direct origin access and trusted client-IP restoration have been reviewed.
 - [ ] Gaps such as unmanaged hosts, ephemeral workloads, unsupported systems, or encrypted/proprietary logs are recorded.
 - [ ] The design identifies which systems support agents and which require syslog, API, or another collection pattern.
 

@@ -1,5 +1,20 @@
 # Official Links
 
+## Standards And Frameworks
+
+- [NIST Cybersecurity Framework 2.0](https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20)
+- [NIST Secure Software Development Framework 1.1](https://csrc.nist.gov/pubs/sp/800/218/final)
+- [OWASP SAMM](https://owaspsamm.org/model/)
+- [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/)
+- [OWASP Top 10:2025](https://owasp.org/Top10/2025/0x00_2025-Introduction/)
+- [OWASP API Security Top 10:2023](https://owasp.org/API-Security/)
+- [SLSA Specification](https://slsa.dev/spec/v1.2/)
+- [CIS Benchmarks](https://www.cisecurity.org/cis-benchmarks)
+- [MITRE ATT&CK](https://attack.mitre.org/)
+- [CISA Secure by Design](https://www.cisa.gov/securebydesign)
+
+## Tools And Platforms
+
 - [Git](https://git-scm.com/doc)
 - [GitHub Actions](https://docs.github.com/actions)
 - [Forgejo](https://forgejo.org/docs/latest/)
@@ -25,3 +40,5 @@
 - [Wazuh](https://documentation.wazuh.com/)
 - [Falco](https://falco.org/docs/)
 - [Kyverno](https://kyverno.io/docs/)
+- [Open Policy Agent](https://www.openpolicyagent.org/docs)
+- [Conftest](https://www.conftest.dev/)

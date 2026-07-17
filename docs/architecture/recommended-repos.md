@@ -9,6 +9,7 @@ client-a-web-api/
 ```
 
 Contains:
+
 - application source code
 - Dockerfile
 - local docker-compose for developer use
@@ -21,6 +22,7 @@ Contains:
 - AGENTS.md / SKILLS.md
 
 Does not contain:
+
 - production infrastructure credentials
 - Terraform state/config
 - production compose or Kubernetes manifests, except optional examples
@@ -35,6 +37,7 @@ client-a-infrastructure/
 ```
 
 Contains:
+
 - Terraform/OpenTofu modules
 - Ansible playbooks
 - VM provisioning
@@ -44,6 +47,7 @@ Contains:
 - registry/proxy/monitoring infrastructure definitions
 
 Does not contain:
+
 - application business logic
 - developer-facing application code
 
@@ -56,6 +60,7 @@ client-a-deployment/
 ```
 
 Contains:
+
 - Docker Compose production/staging manifests
 - Kubernetes Helm charts or values
 - environment overlays
@@ -64,6 +69,7 @@ Contains:
 - GitOps definitions if using Argo CD or Flux
 
 For Docker Compose clients:
+
 ```text
 deploy/
   docker-compose/
@@ -77,6 +83,7 @@ deploy/
 ```
 
 For Kubernetes:
+
 ```text
 deploy/
   helm/
@@ -99,6 +106,7 @@ client-a-docs/
 ```
 
 Contains:
+
 - architecture decisions
 - diagrams
 - onboarding docs
@@ -118,6 +126,7 @@ platform-devsecops/
 ```
 
 Contains:
+
 - reusable CI templates
 - scanner policies
 - DefectDojo scripts
@@ -138,6 +147,7 @@ client-a-security/
 ```
 
 Contains:
+
 - host hardening baselines
 - audit rules
 - malware scanning standards
@@ -146,6 +156,7 @@ Contains:
 - exception workflow templates
 
 Does not contain:
+
 - real incident evidence
 - customer-specific indicators
 - live enrollment credentials
@@ -160,6 +171,7 @@ client-a-monitoring/
 ```
 
 Contains:
+
 - Prometheus rules and scrape templates
 - Grafana dashboard templates
 - Loki logging standards
@@ -167,6 +179,7 @@ Contains:
 - observability ownership documentation
 
 Does not contain:
+
 - live datasource credentials
 - private contact details
 - real production logs

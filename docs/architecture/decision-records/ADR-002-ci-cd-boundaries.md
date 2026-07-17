@@ -13,6 +13,7 @@ Application teams need fast feedback for builds, tests, and security scans. Howe
 CI belongs in the application repository.
 
 CI responsibilities:
+
 - test application
 - build container image
 - run SAST
@@ -27,6 +28,7 @@ CI responsibilities:
 CD belongs in the deployment repository.
 
 CD responsibilities:
+
 - deploy image version to dev/staging/prod
 - apply Docker Compose or Kubernetes manifests
 - manage environment overlays
@@ -37,12 +39,14 @@ CD responsibilities:
 ## Consequences
 
 Benefits:
+
 - developers control build feedback
 - platform team controls environment promotion
 - production changes are auditable
 - deployment logic is not hidden inside application repos
 
 Tradeoffs:
+
 - requires image tagging standard
 - requires deployment trigger convention
 - requires clear promotion workflow

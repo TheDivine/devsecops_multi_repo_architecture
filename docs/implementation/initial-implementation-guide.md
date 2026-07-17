@@ -24,6 +24,7 @@ It should not contain real infrastructure state, credentials, host inventories, 
 5. Use the Ansible roles as a baseline structure for host configuration.
 6. Use the security repository examples to define audit, malware scanning, and endpoint-monitoring standards.
 7. Use the monitoring repository examples to define alert ownership and observability rules.
+8. Select applicable policy-as-code contracts and keep their tests with the consuming repository.
 
 ## What To Replace In Private Repositories
 
@@ -41,6 +42,7 @@ Run validation locally before adapting these templates:
 
 ```sh
 make validate-docs
+make validate-policies
 make check-placeholders
 make grep-secrets
 ```

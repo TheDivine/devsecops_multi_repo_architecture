@@ -2,7 +2,20 @@
 
 ## Purpose
 
-This pattern connects a WAF or reverse proxy to Wazuh without assuming a specific vendor. SafeLine running in Docker is one possible source; equivalent controls apply to another WAF, ingress proxy, NGINX deployment, or managed edge service.
+This pattern connects a WAF or reverse proxy to Wazuh without assuming a specific vendor. Cloudflare is one managed edge example, and SafeLine running in Docker is one self-managed example. Equivalent controls apply to another WAF, ingress proxy, NGINX deployment, or managed edge service.
+
+## Managed Cloudflare Pattern
+
+Do not model Cloudflare as a host that can run a Wazuh agent. Use Cloudflare Logpush or another supported export method to deliver the approved HTTP/WAF dataset to object storage, an HTTPS receiver, or another approved log platform. A controlled collector can then normalize and forward the required events to Wazuh.
+
+Before implementation, validate:
+
+- Cloudflare plan and dataset entitlement;
+- exact field names and event semantics from a sanitized sample;
+- delivery latency, retry, duplication, ordering, and loss monitoring;
+- data minimization and regional/privacy requirements;
+- origin lockdown, Authenticated Origin Pulls where supported, and trusted client-IP restoration;
+- an owner for Cloudflare configuration, log delivery, decoder updates, and incident escalation.
 
 ## Integration Contract
 
@@ -20,6 +33,8 @@ Define and approve a log contract before writing a decoder.
 | Detection category | Stable categories such as `sqli`, `xss`, `lfi`, `rfi`, `scanner`, or `suspicious_uri` |
 | Sensitive fields | Fields to redact, hash, omit, or restrict before collection |
 | Volume | Average and peak bytes/events per second plus rotation behavior |
+
+For Cloudflare, replace the host/file assumption with `<CLOUDFLARE_DATASET>`, `<APPROVED_LOG_DESTINATION>`, and the verified export contract. Do not commit real account, zone, destination, or credential values.
 
 Do not collect full request bodies, cookies, authorization headers, or exploit payloads by default. Minimize data to the fields required for triage and evidence.
 

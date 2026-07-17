@@ -20,3 +20,4 @@ This repository template contains reusable security baselines, host hardening gu
 ## Reference Blueprints
 
 - [Wazuh/SIEM Integration Blueprint](wazuh/README.md) - discovery, WAF log integration, detection engineering, triage, ownership, and sizing guidance.
+- [Security Policy as Code Baseline](policy-as-code/README.md) - policy ownership, lifecycle, enforcement gates, and exception requirements.

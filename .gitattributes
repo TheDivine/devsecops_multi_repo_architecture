@@ -1,3 +1,6 @@
+# Keep text files consistent across WSL, Linux, macOS, and Windows clients.
+* text=auto eol=lf
+
 # Avoid unsafe textual diffs for credential-like and binary material.
 .env binary
 .env.* binary

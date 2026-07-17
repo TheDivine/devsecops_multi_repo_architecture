@@ -27,17 +27,21 @@ platform-devsecops
 ## DefectDojo
 
 Product Type:
+
 - Client or organization name
 
 Product:
+
 - application/repository/service name
 
 Engagement:
+
 - dev
 - staging
 - prod
 
 Tests:
+
 - Gitleaks
 - Semgrep
 - Trivy FS

@@ -1,0 +1,66 @@
+name: Policy validation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: policy-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  policy-tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Install pinned policy CLIs
+        shell: bash
+        env:
+          CONFTEST_VERSION: 0.68.2
+          KYVERNO_VERSION: 1.18.2
+        run: |
+          set -euo pipefail
+          tools_dir="${RUNNER_TEMP}/policy-tools"
+          mkdir -p "${tools_dir}"
+          cd "${tools_dir}"
+
+          conftest_archive="conftest_${CONFTEST_VERSION}_Linux_x86_64.tar.gz"
+          curl --fail --location --silent --show-error \
+            --output "${conftest_archive}" \
+            "https://github.com/open-policy-agent/conftest/releases/download/v${CONFTEST_VERSION}/${conftest_archive}"
+          curl --fail --location --silent --show-error \
+            --output conftest-checksums.txt \
+            "https://github.com/open-policy-agent/conftest/releases/download/v${CONFTEST_VERSION}/checksums.txt"
+          grep " ${conftest_archive}$" conftest-checksums.txt | sha256sum --check --strict -
+          tar --extract --gzip --file "${conftest_archive}" conftest
+
+          kyverno_archive="kyverno-cli_v${KYVERNO_VERSION}_linux_x86_64.tar.gz"
+          curl --fail --location --silent --show-error \
+            --output "${kyverno_archive}" \
+            "https://github.com/kyverno/kyverno/releases/download/v${KYVERNO_VERSION}/${kyverno_archive}"
+          curl --fail --location --silent --show-error \
+            --output kyverno-checksums.txt \
+            "https://github.com/kyverno/kyverno/releases/download/v${KYVERNO_VERSION}/checksums.txt"
+          grep " ${kyverno_archive}$" kyverno-checksums.txt | sha256sum --check --strict -
+          tar --extract --gzip --file "${kyverno_archive}" kyverno
+
+          printf '%s\n' "${tools_dir}" >> "${GITHUB_PATH}"
+
+      - name: Show policy tool versions
+        run: |
+          conftest --version
+          kyverno version
+
+      - name: Run policy tests
+        run: make validate-policies

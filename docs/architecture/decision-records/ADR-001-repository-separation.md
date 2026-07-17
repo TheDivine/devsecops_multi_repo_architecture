@@ -27,6 +27,7 @@ Use a multi-repository architecture:
 ## Consequences
 
 Benefits:
+
 - stronger separation of duties
 - clearer access control
 - safer production operations
@@ -34,6 +35,7 @@ Benefits:
 - cleaner client onboarding
 
 Tradeoffs:
+
 - more repositories to manage
 - requires clear naming conventions
 - requires workflow documentation

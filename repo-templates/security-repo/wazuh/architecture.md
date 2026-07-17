@@ -2,7 +2,7 @@
 
 ## Scope
 
-This architecture illustrates one reusable pattern for correlating perimeter, WAF, reverse-proxy, and host telemetry. SafeLine is an example WAF deployment in Docker; it is not a required product. Replace every component and control boundary according to the approved architecture for `<ENVIRONMENT>`.
+This architecture illustrates one reusable pattern for correlating perimeter, WAF, reverse-proxy, and host telemetry. Cloudflare is an example managed edge WAF; SafeLine is an example self-managed WAF in Docker. Neither is required. Replace every component and control boundary according to the approved architecture for `<ENVIRONMENT>`.
 
 ## Traffic and Monitoring Flow
 
@@ -10,7 +10,7 @@ This architecture illustrates one reusable pattern for correlating perimeter, WA
 flowchart LR
     Internet["Internet / real-world traffic"] --> Firewall["Perimeter firewall / pfSense"]
     Firewall --> IDS["IDS/IPS / Suricata"]
-    IDS --> WAF["WAF / SafeLine or generic WAF"]
+    IDS --> WAF["Self-managed WAF / SafeLine or generic WAF"]
     WAF --> App["Application / reverse proxy / NGINX"]
 
     WAF -. "security and access logs" .-> Agent["Wazuh Agent on WAF or app host"]
@@ -21,6 +21,8 @@ flowchart LR
 ```
 
 The Wazuh agent is part of the monitoring path, not an inline traffic-control hop. pfSense, Suricata, and the WAF each retain their own prevention or detection responsibilities; Wazuh correlates selected evidence after collection.
+
+For a managed WAF such as Cloudflare, the traffic placement and log flow differ from the self-managed diagram above: Cloudflare is at the managed edge before the origin path, and there is no customer-managed WAF host on which to install an agent. Export the approved log dataset to a supported destination or collector, then normalize and ingest it into Wazuh. Confirm the Cloudflare plan, dataset, fields, delivery method, and retention before writing decoders or rules.
 
 ## Log Processing Flow
 
@@ -51,6 +53,7 @@ flowchart LR
 - The WAF or application host can run a supported Wazuh agent and read the approved log files with least privilege.
 - The log format is stable, timestamped, attributable to an asset, and documented by the source owner.
 - Direct application access that bypasses the WAF is prevented or explicitly monitored.
+- Managed-edge origin access is restricted using approved source ranges plus authenticated origin controls where supported; source allowlisting is not the only trust control.
 - Time synchronization is reliable across firewall, IDS/IPS, WAF, application, manager, and ticketing systems.
 - The manager, indexer, and dashboard design is sized and secured separately; a single diagram node does not imply a single-server deployment.
 - Notification integrations send the minimum necessary alert data and reference secrets indirectly.

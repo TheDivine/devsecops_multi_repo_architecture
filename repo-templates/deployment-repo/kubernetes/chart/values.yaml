@@ -1,6 +1,6 @@
 image:
   repository: <registry-url>/<project-name>/app
-  tag: latest
+  tag: <image-tag>
   pullPolicy: IfNotPresent
 
 replicaCount: 2
