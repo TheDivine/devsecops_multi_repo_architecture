@@ -20,3 +20,9 @@ This repo can support either:
 2. Kubernetes mode
 
 Use only the mode required by the target environment.
+
+## Policy As Code
+
+Deployment repositories own policy checks for rendered manifests, immutable promotion, environment boundaries, and approved exceptions. Run native rendering and schema validation before organization-specific policy checks.
+
+See [`policies/README.md`](policies/README.md) for the reference contract and tested Kubernetes workload example.

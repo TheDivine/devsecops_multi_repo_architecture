@@ -69,10 +69,15 @@ Smaller projects may combine platform, security, and monitoring standards into a
 See:
 
 - [Documentation Index](docs/index.md)
+- [DevSecOps Principles](docs/foundations/devsecops-principles.md)
+- [DevSecOps Responsibility Model](docs/governance/devsecops-responsibility-model.md)
+- [Security Framework Alignment](docs/governance/framework-alignment.md)
+- [Research and Standards](docs/references/research-and-standards.md)
 - [Initial Implementation Guide](docs/implementation/initial-implementation-guide.md)
 - [Recommended Repositories](docs/architecture/recommended-repos.md)
 - [Repository Separation Model](docs/architecture/repo-separation-model.md)
 - [Public/Private Boundary](docs/security/public-private-boundary.md)
+- [Policy as Code Operating Model](docs/policy-as-code/operating-model.md)
 
 ## How To Use The Templates
 
@@ -96,8 +101,15 @@ This repository includes safe starter implementations that demonstrate the expec
 - Security repository examples for auditd, ClamAV, Wazuh, and baseline playbooks.
 - Monitoring repository examples for Prometheus, Alertmanager, Grafana, and Loki/Promtail.
 - Platform examples for Argo CD project boundaries and Kyverno policy templates.
+- Cross-repository policy-as-code contracts for build artifacts, deployment manifests, infrastructure plans, admission controls, security exceptions, and alert rules.
 
 See [Initial Implementation Guide](docs/implementation/initial-implementation-guide.md).
+
+For a reusable SIEM integration reference pattern, see the [Wazuh/SIEM Blueprint](repo-templates/security-repo/wazuh/README.md).
+
+For policy ownership and enforcement across repository boundaries, see the [Policy as Code Operating Model](docs/policy-as-code/operating-model.md).
+
+For the principles, responsibility boundaries, and standards that inform the blueprint, see [DevSecOps Principles](docs/foundations/devsecops-principles.md) and [Security Framework Alignment](docs/governance/framework-alignment.md). These references explain the design basis; they do not make a certification or compliance claim.
 
 For a concrete dummy environment profile, see [Cybelynxcore Production-Like Example](examples/cybelynxcore-production/README.md).
 

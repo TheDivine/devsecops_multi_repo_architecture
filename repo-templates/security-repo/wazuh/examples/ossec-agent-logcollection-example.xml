@@ -1,0 +1,11 @@
+<!--
+  Documentation-only fragment for a Linux Wazuh agent.
+  Replace escaped placeholders only in approved private configuration.
+-->
+<ossec_config>
+  <localfile>
+    <location>/var/log/&lt;WAF_LOG_PATH&gt;</location>
+    <log_format>syslog</log_format>
+    <only-future-events>yes</only-future-events>
+  </localfile>
+</ossec_config>

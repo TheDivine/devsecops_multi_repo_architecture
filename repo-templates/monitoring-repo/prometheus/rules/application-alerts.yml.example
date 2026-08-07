@@ -6,15 +6,19 @@ groups:
         for: 5m
         labels:
           severity: critical
+          owner: <ALERT_OWNER>
         annotations:
           summary: "Application target is down"
           description: "The application scrape target has been unavailable for more than 5 minutes."
+          runbook_url: <RUNBOOK_URL>
 
       - alert: ApplicationHighErrorRate
         expr: rate(http_requests_total{job="<application-name>",status=~"5.."}[5m]) > 0.05
         for: 10m
         labels:
           severity: warning
+          owner: <ALERT_OWNER>
         annotations:
           summary: "Application error rate is elevated"
           description: "Tune this query to match application metrics before production use."
+          runbook_url: <RUNBOOK_URL>

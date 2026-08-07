@@ -1,0 +1,93 @@
+<!--
+  Public-safe example rules. The 100300-100399 range is reserved only within
+  this blueprint and must be checked against the target manager's ID registry.
+-->
+<group name="waf,custom_waf,">
+  <rule id="100300" level="3">
+    <decoded_as>waf-event</decoded_as>
+    <description>Normalized WAF event.</description>
+    <group>waf_event,</group>
+  </rule>
+
+  <rule id="100301" level="5">
+    <if_sid>100300</if_sid>
+    <field name="action">^blocked$</field>
+    <description>WAF blocked a request from $(srcip).</description>
+    <group>waf_blocked,</group>
+  </rule>
+
+  <rule id="100302" level="12">
+    <if_sid>100300</if_sid>
+    <field name="action">^allowed$</field>
+    <field name="waf.category" type="pcre2">^(sqli|xss|rfi|lfi|scanner|bot|suspicious_uri)$</field>
+    <description>WAF reported suspicious activity as allowed from $(srcip).</description>
+    <group>waf_allowed,suspicious_request,</group>
+  </rule>
+
+  <rule id="100310" level="10">
+    <if_sid>100300</if_sid>
+    <field name="waf.category">^sqli$</field>
+    <description>WAF classified a request as SQL injection activity.</description>
+    <mitre>
+      <id>T1190</id>
+    </mitre>
+    <group>web_attack,sqli,</group>
+  </rule>
+
+  <rule id="100311" level="10">
+    <if_sid>100300</if_sid>
+    <field name="waf.category">^xss$</field>
+    <description>WAF classified a request as cross-site scripting activity.</description>
+    <mitre>
+      <id>T1190</id>
+    </mitre>
+    <group>web_attack,xss,</group>
+  </rule>
+
+  <rule id="100312" level="10">
+    <if_sid>100300</if_sid>
+    <field name="waf.category" type="pcre2">^(rfi|lfi)$</field>
+    <description>WAF classified a request as remote or local file inclusion activity.</description>
+    <mitre>
+      <id>T1190</id>
+    </mitre>
+    <group>web_attack,file_inclusion,</group>
+  </rule>
+
+  <rule id="100313" level="7">
+    <if_sid>100300</if_sid>
+    <field name="waf.category" type="pcre2">^(scanner|bot)$</field>
+    <description>WAF observed scanner or bot activity.</description>
+    <mitre>
+      <id>T1595</id>
+    </mitre>
+    <group>reconnaissance,scanner,bot,</group>
+  </rule>
+
+  <rule id="100314" level="8">
+    <if_sid>100300</if_sid>
+    <field name="waf.category">^suspicious_uri$</field>
+    <description>WAF classified a URI as suspicious.</description>
+    <mitre>
+      <id>T1190</id>
+    </mitre>
+    <group>web_attack,suspicious_uri,</group>
+  </rule>
+
+  <rule id="100315" level="3">
+    <if_sid>100300</if_sid>
+    <field name="status" type="pcre2">^(403|404)$</field>
+    <description>WAF or reverse proxy returned HTTP 403 or 404.</description>
+    <group>http_denied_or_not_found,</group>
+  </rule>
+
+  <rule id="100320" level="8" frequency="12" timeframe="120">
+    <if_matched_sid>100315</if_matched_sid>
+    <same_srcip />
+    <description>Repeated HTTP 403/404 responses from $(srcip) within two minutes.</description>
+    <mitre>
+      <id>T1595</id>
+    </mitre>
+    <group>reconnaissance,repeated_http_errors,</group>
+  </rule>
+</group>

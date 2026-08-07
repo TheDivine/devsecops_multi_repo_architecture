@@ -49,6 +49,7 @@ build/
 dist/
 target/
 out/
+outputs/
 coverage/
 node_modules/
 vendor/

@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secure-pod
+spec:
+  securityContext:
+    runAsNonRoot: true
+  containers:
+    - name: application
+      image: registry.example.invalid/application:1.0.0
+      securityContext:
+        privileged: false
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: root-pod
+spec:
+  securityContext:
+    runAsNonRoot: false
+  containers:
+    - name: application
+      image: registry.example.invalid/application:1.0.0
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: latest-tag-pod
+spec:
+  securityContext:
+    runAsNonRoot: true
+  containers:
+    - name: application
+      image: registry.example.invalid/application:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privileged-pod
+spec:
+  securityContext:
+    runAsNonRoot: true
+  containers:
+    - name: application
+      image: registry.example.invalid/application:1.0.0
+      securityContext:
+        privileged: true
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: synthetic-wazuh-agent
+  namespace: wazuh-system
+  labels:
+    security.example/policy-exception-id: SYNTHETIC-WAZUH-EXCEPTION
+spec:
+  securityContext:
+    runAsNonRoot: true
+  containers:
+    - name: wazuh-agent
+      image: registry.example.invalid/wazuh-agent:1.0.0
+      securityContext:
+        privileged: true

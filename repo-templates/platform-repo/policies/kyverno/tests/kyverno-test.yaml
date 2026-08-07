@@ -1,0 +1,55 @@
+apiVersion: cli.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  name: platform-pod-security-policies
+policies:
+  - ../require-non-root.yaml
+  - ../disallow-latest-tag.yaml
+  - ../disallow-privileged-containers.yaml
+resources:
+  - resources.yaml
+exceptions:
+  - synthetic-policy-exception.yaml
+results:
+  - policy: require-non-root-workloads
+    rule: require-run-as-non-root
+    resources:
+      - secure-pod
+    kind: Pod
+    result: pass
+  - policy: require-non-root-workloads
+    rule: require-run-as-non-root
+    resources:
+      - root-pod
+    kind: Pod
+    result: fail
+  - policy: disallow-latest-image-tag
+    rule: require-explicit-image-tag
+    resources:
+      - secure-pod
+    kind: Pod
+    result: pass
+  - policy: disallow-latest-image-tag
+    rule: require-explicit-image-tag
+    resources:
+      - latest-tag-pod
+    kind: Pod
+    result: fail
+  - policy: disallow-privileged-containers
+    rule: disallow-privileged-containers
+    resources:
+      - secure-pod
+    kind: Pod
+    result: pass
+  - policy: disallow-privileged-containers
+    rule: disallow-privileged-containers
+    resources:
+      - privileged-pod
+    kind: Pod
+    result: fail
+  - policy: disallow-privileged-containers
+    rule: disallow-privileged-containers
+    resources:
+      - wazuh-system/synthetic-wazuh-agent
+    kind: Pod
+    result: skip

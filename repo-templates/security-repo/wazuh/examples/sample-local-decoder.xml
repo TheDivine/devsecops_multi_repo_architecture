@@ -1,0 +1,9 @@
+<!--
+  Public-safe decoder for the synthetic WAF_EVENT fixtures only.
+  Adapt and validate against the real source schema in a private repository.
+-->
+<decoder name="waf-event">
+  <prematch type="pcre2">^WAF_EVENT\s+</prematch>
+  <regex type="pcre2">^WAF_EVENT timestamp=(\S+) srcip=(\S+) method=(\S+) uri=(\S+) action=(\S+) status=(\d{3}) category=(\S+) rule_id=(\S+)$</regex>
+  <order>waf.timestamp,srcip,waf.method,waf.uri,action,status,waf.category,waf.rule_id</order>
+</decoder>

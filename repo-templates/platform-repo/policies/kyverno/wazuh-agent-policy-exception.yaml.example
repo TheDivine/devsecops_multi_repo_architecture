@@ -1,0 +1,26 @@
+apiVersion: kyverno.io/v2
+kind: PolicyException
+metadata:
+  name: <APPROVED_EXCEPTION_ID>
+  namespace: <POLICY_EXCEPTION_NAMESPACE>
+  labels:
+    security.example/owner: <POLICY_EXCEPTION_OWNER>
+    security.example/expires-on: <YYYY-MM-DD>
+spec:
+  background: true
+  exceptions:
+    - policyName: disallow-privileged-containers
+      ruleNames:
+        - disallow-privileged-containers
+        - autogen-disallow-privileged-containers
+  match:
+    any:
+      - resources:
+          kinds:
+            - Pod
+            - DaemonSet
+          namespaces:
+            - <WAZUH_NAMESPACE>
+          selector:
+            matchLabels:
+              security.example/policy-exception-id: <APPROVED_EXCEPTION_ID>

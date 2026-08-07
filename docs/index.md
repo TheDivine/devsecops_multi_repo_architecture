@@ -5,6 +5,9 @@ Use this index to navigate the blueprint by lifecycle phase.
 ## Start Here
 
 - [Repository Review](review/repo-review.md)
+- [DevSecOps Principles](foundations/devsecops-principles.md)
+- [DevSecOps Responsibility Model](governance/devsecops-responsibility-model.md)
+- [Security Framework Alignment](governance/framework-alignment.md)
 - [GitHub Publishing Checklist](review/github-publishing-checklist.md)
 - [Initial Implementation Guide](implementation/initial-implementation-guide.md)
 - [Cybelynxcore Production-Like Example](../examples/cybelynxcore-production/README.md)
@@ -19,13 +22,24 @@ Use this index to navigate the blueprint by lifecycle phase.
 - [Client Onboarding Flow Diagram](architecture/diagrams/client-onboarding-flow.md)
 - [Platform vs App Responsibility Diagram](architecture/diagrams/platform-vs-app-responsibility.md)
 - [Architecture Decision Records](architecture/decision-records/)
+- [ADR-008: Risk-Based DevSecOps Framework Alignment](architecture/decision-records/ADR-008-risk-based-devsecops-framework-alignment.md)
+
+## Foundations And Governance
+
+- [DevSecOps Principles](foundations/devsecops-principles.md)
+- [DevSecOps Responsibility Model](governance/devsecops-responsibility-model.md)
+- [Security Framework Alignment](governance/framework-alignment.md)
+- [DevSecOps Research and Standards](references/research-and-standards.md)
 
 ## Security And Public Safety
 
 - [Secret Management Policy](security/secret-management-policy.md)
 - [Public/Private Boundary](security/public-private-boundary.md)
 - [Repository Sanitization Checklist](security/repository-sanitization-checklist.md)
+- [Policy as Code Operating Model](policy-as-code/operating-model.md)
+- [Wazuh/SIEM Integration Blueprint](../repo-templates/security-repo/wazuh/README.md)
 - [Security Gates](quality-gates/security-gates.md)
+- [Quality Gates](quality-gates/quality-gates.md)
 
 ## Delivery And GitOps
 
@@ -57,3 +71,8 @@ Use this index to navigate the blueprint by lifecycle phase.
 - [Official Links](tooling/official-links.md)
 - [Recommended Tools](tooling/recommended-tools.md)
 - [Local Development Tooling](tooling/local-dev-tooling.md)
+
+## Planning And Review
+
+- [Modular Roadmap Matrix](roadmap/roadmap-matrix.md)
+- [Repository Review](review/repo-review.md)
